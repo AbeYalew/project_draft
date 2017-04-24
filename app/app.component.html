@@ -1,0 +1,31 @@
+
+
+<h1>Welcome</h1>
+
+
+
+<button (click)="auth.login()" *ngIf="!auth.authenticated()">Login</button> <br>
+<button (click)="auth.logout()" *ngIf="auth.authenticated()" >Logout</button><br>
+
+<div [ngClass]='{description:true}' *ngIf="!auth.authenticated()">
+Some description here 
+
+</div>
+
+  <div  [ngClass]='{description:true}' *ngIf="auth.authenticated()">
+  <a [routerLink]="['home']" routerLinkActive="active">Home</a>
+  <a [routerLink]="['clubs']" routerLinkActive="active">Clubs</a>
+  <a [routerLink]="['liverides']" routerLinkActive="active">Live Rides</a>
+  <a [routerLink]="['events']" routerLinkActive="active">Events</a>
+  <a [routerLink]="['profile']" routerLinkActive="active">Profile</a>
+
+
+ <router-outlet></router-outlet>
+
+  </div>
+
+
+
+
+
+
